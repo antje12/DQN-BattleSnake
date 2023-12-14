@@ -74,7 +74,7 @@ agent = DQN_Solver(load_model("final_model.pth"))
 # move is called on every turn and returns your next move
 # Valid moves are "up", "down", "left", or "right"
 # See https://docs.battlesnake.com/api/example-move for available data
-def move2(game_state: typing.Dict) -> typing.Dict:
+def move(game_state: typing.Dict) -> typing.Dict:
 
     moves = ["up", "down", "left", "right"]
     next_move = random.choice(moves)
@@ -143,9 +143,6 @@ def start(game_state: typing.Dict):
 # end is called when your Battlesnake finishes a game
 def end(game_state: typing.Dict):
     print("GAME OVER")
-
-def move(game_state: typing.Dict) -> typing.Dict:
-    return {"move": "up"}
 
 app = Flask("Battlesnake")
 
