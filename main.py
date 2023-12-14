@@ -4,10 +4,12 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.get("/")
 def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=8000))
+    host = "0.0.0.0"
+    port = int(os.environ.get("PORT", "8000"))
+    app.run(host=host, port=port)
